@@ -31,22 +31,6 @@ Movie Explorer is a React-based movie search application that allows users to:
 
 ---
 
-## 📁 Project Structure
-src/
-├── components/
-│   ├── MovieCard.jsx
-│   ├── Pagination.jsx
-│   └── Header.jsx
-├── context/
-│   ├── MovieContext.jsx
-│   └── movieReducer.jsx
-├── pages/
-│   ├── SearchPage.jsx
-│   └── FavoritesPage.jsx
-├── services/
-│   └── api.js
-└── App.jsx
----
 
 ## 🌐 API Reference
 
