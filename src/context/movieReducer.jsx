@@ -7,15 +7,18 @@ const movieReducer = (state, action) => {
                 movies : action.payload,
             };
         case 'ADD_TO_FAVORITES':
+            if (state.favorites.some(fav => fav.imdbID === action.payload.imdbID)) {
+                return state; // already in favorites
+              }
             return{
                 ...state,
-                favorites:[state.favorites, action.payload],
+                favorites:[...state.favorites, action.payload],
             };
         case 'REMOVE_FROM_FAVORITES':
             return{
                 ...state,
                 favorites:state.favorites.filter(
-                    (movie)=>movie.id !== action.payload
+                    (movie)=>movie.imdbID !== action.payload.imdbID
                 ),
             };  
         case 'SET_FILTER':
@@ -23,6 +26,23 @@ const movieReducer = (state, action) => {
                 ...state,
                 filter:action.payload,
             };
+            case 'SET_QUERY':
+                return {
+                  ...state,
+                  query: action.payload,
+                };
+          
+              case 'SET_CURRENT_PAGE':
+                return {
+                  ...state,
+                  currentPage: action.payload,
+                };
+          
+              case 'SET_TOTAL_RESULTS':
+                return {
+                  ...state,
+                  totalResults: action.payload,
+                };
         default:
             return state;          
     }

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-   <header className='bg-blue-600 p-4 text-white'>
+   <header className='bg-gray-600 p-4 text-white sticky top-0 z-50 '>
     <div className='container mx-auto flex justify-between'>
-        <h1 className='text-xl font-bold'>Movie Finder</h1>
+        <a className='text-xl font-bold' href='#'>Movie Finder</a>
         <nav>
             <Link to='/' className='mr-4'>Search</Link>
             <Link to='/favorites'>Favorites</Link>
